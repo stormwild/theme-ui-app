@@ -1,3 +1,9 @@
+# Style guide driven development in React with Theme UI
+
+Reference:
+
+- [Style guide driven development in React with Theme UI](https://mitchgavan.com/styleguide-driven-development/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/** @jsx jsx */
+import { jsx, ThemeProvider, Container, Grid, Flex, Box } from "theme-ui";
+import theme from "./theme";
+import Card from "./Card";
+import ColorSwitch from "./ColorSwitch";
+
+const cards = [1, 2, 3, 4, 5, 6]; // Demo data to generate 6 cards
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Grid>
+        <Container>
+          <ColorSwitch />
+          <Flex sx={{ flexWrap: "wrap" }}>
+            {cards.map((card) => (
+              <Box key={card} sx={{ width: ["100%", "50%", "33.33%"] }}>
+                <Card />
+              </Box>
+            ))}
+          </Flex>
+        </Container>
+      </Grid>
+    </ThemeProvider>
   );
 }
 
